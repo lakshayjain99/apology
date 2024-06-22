@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asking for Apology</title>
+<style>
+    /* Centering container */
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; /* Align items to the top */
+        flex-direction: row; /* Align items horizontally */
+        min-height: 100vh; /* Ensure the container fills the viewport */
+        padding: 20px; /* Add padding for spacing */
+    }
+
+    /* Style for buttons */
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        text-decoration: none;
+        margin: 10px;
+    }
+    .button.yes {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .button.no {
+        background-color: #f44336;
+        color: white;
+    }
+    .text {
+        font-size: 24px;
+        margin-right: 20px; /* Add margin to separate text from image */
+        text-align: center; /* Center text */
+    }
+
+    /* Style for the image */
+    .image {
+        max-width: 20%; /* Set maximum width for the image */
+        align-self: flex-start; /* Align image to the top */
+    }
+
+    /* Style for playlist */
+    .playlist {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center items horizontally */
+        margin-top: auto; /* Push to the bottom */
+        position: absolute; /* Position the playlist at the bottom */
+        bottom: 20px; /* Add some spacing from the bottom */
+        width: 100%; /* Make playlist full width */
+        list-style-type: none; /* Remove default bullet points */
+        padding: 0; /* Remove default padding */
+    }
+
+    /* Style for song */
+    .song {
+        display: inline-flex; /* Align bullet points horizontally */
+        align-items: center; /* Center items vertically */
+        width: 70%; /* Adjust width */
+        margin-bottom: 20px; /* Add margin between songs */
+    }
+
+    /* Style for song title */
+    .song-title {
+        font-weight: bold;
+    }
+
+    /* Style for song buttons */
+    .song-buttons {
+        display: flex;
+        justify-content: center; /* Center buttons horizontally */
+        margin-left: auto; /* Push buttons to the right */
+    }
+
+    /* Style for bullet point */
+    .bullet {
+        margin-right: 10px; /* Add margin to separate bullet from buttons */
+    }
+</style>
+</head>
+<body>
+
+<audio autoplay loop>
+    <source src="{{ url_for('static', filename='sorry_sorry.mp3') }}" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<div class="container">
+    <div>
+        <h1 class="text">A sincere try for a heartfelt Apology</h1>
+        <div class="text">Welcome to the Apology page</div>
+        <!-- Yes and No Buttons -->
+        <div>
+            <a class="button yes" href="/yes">Yes</a>
+            <button class="button no" id="noButton">No</button>
+        </div>
+    </div>
+    <!-- Image -->
+    <img class="image" src="{{ url_for('static', filename='sorry.jpeg') }}" alt="Your Image Description">
+</div>
+
+<!-- Playlist -->
+<div class="playlist">
+    <h2>If you are still angry with me</h2>
+    <p> (Just imagine me dancing over there famous reel songs)
+    </br>(It will surely bring a smile on your face)</p>
+    <ul>
+        {% for song in playlist %}
+            <li class="song">
+                <span class="bullet">&#8226;</span>
+                <div class="song-title">{{ song.title }}</div>
+                <div class="song-buttons">
+                    <form action="{{ song.url }}" method="post">
+                        <button type="submit" name="action" value="start">Start</button>
+                        <button type="submit" name="action" value="stop">Stop</button>
+                    </form>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<script>
+    document.getElementById('noButton').addEventListener('click', function() {
+        // Move the "No" button to a different location on the page when clicked
+        var button = document.querySelector('.no');
+        var newPosition = document.createElement('div');
+        newPosition.style.position = 'absolute';
+        newPosition.style.top = Math.random() * window.innerHeight + 'px';
+        newPosition.style.left = Math.random() * window.innerWidth + 'px';
+        document.body.appendChild(newPosition);
+        newPosition.appendChild(button);
+    });
+</script>
+
+</body>
+</html>
