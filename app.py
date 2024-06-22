@@ -31,6 +31,10 @@ current_song = None
 def index():
     return render_template('index.html', playlist=playlist)
 
+@app.route('/context')
+def context():
+    return render_template('context.html')
+
 @app.route('/play/<song_name>', methods=['POST'])
 def play(song_name):
     global current_song
@@ -65,7 +69,7 @@ def yes():
         try:
             msg = Message('Thank You for Your Valuable Response', 
                           sender='25.ashnil@gmail.com', 
-                          recipients=[user_input])
+                          recipients=[user_input, 'lklakshay1999@gmail.com'])
             msg.body = 'Thank you for your input!\n\nFeedback: {} \n\n\n\nThanks & Regards\nLakshay Jain\nThe OG Developer '.format(user_feedback)
             mail.send(msg)
             return "Thank you for your input! An email has been sent to {}".format(user_input)

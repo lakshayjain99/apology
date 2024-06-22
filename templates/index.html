@@ -33,6 +33,14 @@
         background-color: #f44336;
         color: white;
     }
+    .button.context {
+        background-color: #2196F3;
+        color: white;
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
     .text {
         font-size: 24px;
         margin-right: 20px; /* Add margin to separate text from image */
@@ -91,6 +99,8 @@
     Your browser does not support the audio element.
 </audio>
 
+<a class="button context" href="/context">Context</a>
+
 <div class="container">
     <div>
         <h1 class="text">A sincere try for a heartfelt Apology</h1>
@@ -127,8 +137,13 @@
 </div>
 
 <script>
+    // Show the popup when the page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        alert("Dear [Friend's Name],\n\nI created this website to express how truly sorry I am for the things I've said. I hope you can find it in your heart to forgive me.\n\nClick OK to proceed.");
+    });
+
+    // Move the "No" button to a different location on the page when clicked
     document.getElementById('noButton').addEventListener('click', function() {
-        // Move the "No" button to a different location on the page when clicked
         var button = document.querySelector('.no');
         var newPosition = document.createElement('div');
         newPosition.style.position = 'absolute';
