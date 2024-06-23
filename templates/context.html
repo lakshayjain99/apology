@@ -29,18 +29,52 @@
         background-color: #2196F3;
         margin-top: 20px;
     }
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    .image-row {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .image-row img {
+        max-width: 150px;
+        height: auto;
+        margin-right: 20px;
+    }
 </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Context and Explanation</h1>
+    <h1>Context</h1>
     <p>
-        Dear [Friend's Name],<br><br>
-        I created this website to express how truly sorry I am for the things I've said. I hope you can find it in your heart to forgive me.
+        Hello Jyoti,<br><br>
+        Meet the two characters of this story.
+        
     </p>
-    <a class="button" href="/">OK</a>
-    <a class="button play-button" id="playButton" href="/lyrics">Play Song</a>
+    <div class="image-container">
+        <div class="image-row">
+            <img src="{{ url_for('static', filename='cool_chi.jpeg') }}" alt="Image 1 Description">
+            <p>Meet Chi. Smart but emotional fool. <br>Bhaut practical samajta hai apne aap ko but hai nahi. </p>
+        </div>
+        <div class="image-row">
+            <img src="{{ url_for('static', filename='cute_jo.jpeg') }}" alt="Image 2 Description">
+            <p>Meet Jo. Extremely cute, likes reading books. <br> but apne khayalon mein khoyi reheti hai hamesha.</p>
+        </div>
+    </div>
+    <p>
+        Here's an original composition expressing my feeling. Hope You like it.
+    </p>
+    
+    
+    
+    <a class="button play-button" id="playButton" href="/lyrics">Song Page</a>
 </div>
 
 </body>
