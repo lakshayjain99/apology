@@ -35,6 +35,10 @@ def index():
 def context():
     return render_template('context.html')
 
+@app.route('/lyrics')
+def lyrics():
+    return render_template('lyrics.html')
+
 @app.route('/play/<song_name>', methods=['POST'])
 def play(song_name):
     global current_song
