@@ -36,10 +36,6 @@
     .button.context {
         background-color: #2196F3;
         color: white;
-        position: absolute;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
     }
     .text {
         font-size: 24px;
@@ -90,6 +86,19 @@
     .bullet {
         margin-right: 10px; /* Add margin to separate bullet from buttons */
     }
+
+    /* Style for the top section */
+    .top-section {
+        text-align: center; /* Center align the text and button */
+        margin-bottom: 20px; /* Add space below the top section */
+    }
+
+    /* Centering the buttons */
+    .buttons {
+        display: flex;
+        justify-content: center; /* Center buttons horizontally */
+        margin-top: 20px; /* Add space above the buttons */
+    }
 </style>
 </head>
 <body>
@@ -99,14 +108,20 @@
     Your browser does not support the audio element.
 </audio>
 
-<a class="button context" href="/context">Context</a>
+<!-- Top section with explanation and context button -->
+<div class="top-section">
+    <p>Click here before proceeding</p>
+    <a class="button context" href="/context">Context</a>
+</div>
 
 <div class="container">
     <div>
-        <h1 class="text">A sincere try for a heartfelt Apology</h1>
-        <div class="text">Welcome to the Apology page</div>
+        <div class="text">I now (in the past 6 months) have realized what I did was completely wrong. Gaslighting you and what not.</div>
+        <div class="text">I can't justify my actions at any level.<br>
+        So, I am here, in front of you, guilty of every charge and ready to accept any punishment for the apology.</div><br><br><br><br>
+        <div class="text">Please Maaf Kardo</div>
         <!-- Yes and No Buttons -->
-        <div>
+        <div class="buttons">
             <a class="button yes" href="/yes">Yes</a>
             <button class="button no" id="noButton">No</button>
         </div>
@@ -139,7 +154,7 @@
 <script>
     // Show the popup when the page loads
     document.addEventListener('DOMContentLoaded', function() {
-        alert("Dear Jyoti Bisht,\n\nI created this website to express how truly sorry I am for the things I've said and for my actions in the past. I hope you can find it in your heart to forgive me.\n\nClick OK to proceed.");
+        alert("Dear Jyoti Bisht,\n\nI created this website to express how truly sorry I am for the things I've said and for my actions in the past. I hope you can find it in your heart to forgive me.\nJust bear with me for the next 5 minutes. I promise, you won't regret it.\n\nClick OK to proceed.");
     });
 
     // Move the "No" button to a different location on the page when clicked
