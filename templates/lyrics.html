@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lyrics Page</title>
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+        padding: 20px;
+        text-align: center;
+    }
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        text-decoration: none;
+        background-color: #4CAF50;
+        color: white;
+        margin-top: 20px;
+    }
+    .play-button {
+        background-color: #2196F3;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Song Lyrics</h1>
+    <p>
+Tere bin sab kuchh suuna <br>
+Dil ka raasta kho gaya <br>
+Jab se maine tumhe chhoda <br>
+Aankhon se neend bhi rootha <br>
+</p>
+<p>
+Woh baatein jo maine kahi <br>
+Dil ko zaroor chubhti hai <br>
+Samjha me maafi ki zaroorat <br>
+Pyaara yeh bandhan jaane kaisi baat ban gayi <br>
+</p>
+<p>
+Maaf kar de mere dost <br>
+Dil se mangat hoon main pyaar <br>
+Saath ki kami hai mujhe <br>
+Phir se laa aao woh bahaar <br>
+</p>
+<p>
+Raaton ko main jaagne laga <br>
+Yaadon mein tu hi basa <br>
+Aankhon mein aansu rehne lage<br>
+Pehle jaisi dosti ko tarse yeh jahan<br>
+</p>
+<p>
+Dil se pyaar<br>
+Dil se maafi<br>
+Dilon ko milna hi hai<br>
+Door na ho rishton ka rang<br>
+Pyaar se phir se milna hai<br>
+</p>
+<p>
+Maaf kar de mere dost<br>
+Dil se mangat hoon main pyaar<br>
+Saath ki kami hai mujhe<br>
+Phir se laa aao woh bahaar<br>
+
+    </p>
+    <button class="button play-button" id="playButton">Play Song</button>
+    <a class="button" href="/">Back to Home</a>
+</div>
+
+<audio id="audioPlayer">
+    <source src="{{ url_for('static', filename='dost_se_maafi.mp3') }}" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<script>
+    document.getElementById('playButton').addEventListener('click', function() {
+        var audio = document.getElementById('audioPlayer');
+        if (audio.paused) {
+            audio.play();
+            this.textContent = 'Pause Song';
+        } else {
+            audio.pause();
+            this.textContent = 'Play Song';
+        }
+    });
+</script>
+
+</body>
+</html>

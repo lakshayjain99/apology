@@ -1,88 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Asking for Apology</title>
-<style>
-    /* Centering container */
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start; /* Align items to the top */
-        flex-direction: row; /* Align items horizontally */
-        min-height: 100vh; /* Ensure the container fills the viewport */
-        padding: 20px; /* Add padding for spacing */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asking for Apology</title>
+    <style>
+        /* Centering container */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align items to the top */
+            flex-direction: row; /* Align items horizontally */
+            min-height: 100vh; /* Ensure the container fills the viewport */
+            padding: 20px; /* Add padding for spacing */
+        }
 
-    /* Style for buttons */
-    .button {
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        border-radius: 5px;
-        text-decoration: none;
-        margin: 10px;
-    }
-    .button.yes {
-        background-color: #4CAF50;
-        color: white;
-    }
-    .button.no {
-        background-color: #f44336;
-        color: white;
-    }
-    .text {
-        font-size: 24px;
-        margin-right: 20px; /* Add margin to separate text from image */
-        text-align: center; /* Center text */
-    }
+        /* Style for buttons */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 10px;
+        }
+        .button.yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .button.no {
+            background-color: #f44336;
+            color: white;
+        }
+        .button.context {
+            background-color: #2196F3;
+            color: white;
+        }
+        .text {
+            font-size: 24px;
+            margin-right: 20px; /* Add margin to separate text from image */
+            text-align: center; /* Center text */
+        }
 
-    /* Style for the image */
-    .image {
-        max-width: 20%; /* Set maximum width for the image */
-        align-self: flex-start; /* Align image to the top */
-    }
+        /* Style for the image */
+        .image {
+            max-width: 20%; /* Set maximum width for the image */
+            align-self: flex-start; /* Align image to the top */
+        }
 
-    /* Style for playlist */
-    .playlist {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Center items horizontally */
-        margin-top: auto; /* Push to the bottom */
-        position: absolute; /* Position the playlist at the bottom */
-        bottom: 20px; /* Add some spacing from the bottom */
-        width: 100%; /* Make playlist full width */
-        list-style-type: none; /* Remove default bullet points */
-        padding: 0; /* Remove default padding */
-    }
+        /* Style for playlist */
+        .playlist {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
+            margin-top: auto; /* Push to the bottom */
+            position: absolute; /* Position the playlist at the bottom */
+            bottom: 20px; /* Add some spacing from the bottom */
+            width: 100%; /* Make playlist full width */
+            list-style-type: none; /* Remove default bullet points */
+            padding: 0; /* Remove default padding */
+        }
 
-    /* Style for song */
-    .song {
-        display: inline-flex; /* Align bullet points horizontally */
-        align-items: center; /* Center items vertically */
-        width: 70%; /* Adjust width */
-        margin-bottom: 20px; /* Add margin between songs */
-    }
+        /* Style for song */
+        .song {
+            display: inline-flex; /* Align bullet points horizontally */
+            align-items: center; /* Center items vertically */
+            width: 70%; /* Adjust width */
+            margin-bottom: 20px; /* Add margin between songs */
+        }
 
-    /* Style for song title */
-    .song-title {
-        font-weight: bold;
-    }
+        /* Style for song title */
+        .song-title {
+            font-weight: bold;
+        }
 
-    /* Style for song buttons */
-    .song-buttons {
-        display: flex;
-        justify-content: center; /* Center buttons horizontally */
-        margin-left: auto; /* Push buttons to the right */
-    }
+        /* Style for song buttons */
+        .song-buttons {
+            display: flex;
+            justify-content: center; /* Center buttons horizontally */
+            margin-left: auto; /* Push buttons to the right */
+        }
 
-    /* Style for bullet point */
-    .bullet {
-        margin-right: 10px; /* Add margin to separate bullet from buttons */
-    }
-</style>
+        /* Style for bullet point */
+        .bullet {
+            margin-right: 10px; /* Add margin to separate bullet from buttons */
+        }
+
+        /* Style for the top section */
+        .top-section {
+            text-align: center; /* Center align the text and button */
+            margin-bottom: 20px; /* Add space below the top section */
+        }
+
+        /* Centering the buttons */
+        .buttons {
+            display: flex;
+            justify-content: center; /* Center buttons horizontally */
+            margin-top: 20px; /* Add space above the buttons */
+        }
+
+        /* Style for video */
+        .video {
+            display: none; /* Hide the video by default */
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
 
@@ -91,44 +116,64 @@
     Your browser does not support the audio element.
 </audio>
 
+<!-- Top section with explanation and context button -->
+<div class="top-section">
+    <p>Click here before proceeding</p>
+    <a class="button context" href="/context">Context</a>
+</div>
+
 <div class="container">
     <div>
-        <h1 class="text">A sincere try for a heartfelt Apology</h1>
-        <div class="text">Welcome to the Apology page</div>
+        <div class="text">I now (in the past 6 months) have realized what I did was completely wrong. Gaslighting you and what not.</div>
+        <div class="text">I can't justify my actions at any level.<br>
+        I know, tu gyada yaad nahi rakhti hai, na gyada emotions show karti, maaf kardeti hai tu sabko, grudges nahi rakhti.<br>
+        You are a great human being, a great soul.<br>
+        So, here I am, in front of you, guilty of every charge and ready to accept any punishment for my mistakes, pleading for an apology.
+        </div>
+        <br><br><br><br>
+        <div class="text">Please Maaf Kardo</div>
         <!-- Yes and No Buttons -->
-        <div>
+        <div class="buttons">
             <a class="button yes" href="/yes">Yes</a>
-            <button class="button no" id="noButton">No</button>
+            <button class="button no" id="noButton">No</buttson>
         </div>
     </div>
     <!-- Image -->
-    <img class="image" src="{{ url_for('static', filename='sorry.jpeg') }}" alt="Your Image Description">
+    <img class="image" src="{{ url_for('static', filename='apology.jpeg') }}" alt="Your Image Description">
 </div>
 
 <!-- Playlist -->
 <div class="playlist">
     <h2>If you are still angry with me</h2>
-    <p> (Just imagine me dancing over there famous reel songs)
-    </br>(It will surely bring a smile on your face)</p>
+    <p>(Just imagine me dancing over these famous reel songs)
+    </br>(I tried for the deep fake over these reels, but no success)</p>
     <ul>
         {% for song in playlist %}
             <li class="song">
                 <span class="bullet">&#8226;</span>
                 <div class="song-title">{{ song.title }}</div>
                 <div class="song-buttons">
-                    <form action="{{ song.url }}" method="post">
-                        <button type="submit" name="action" value="start">Start</button>
-                        <button type="submit" name="action" value="stop">Stop</button>
-                    </form>
+                    f"<button type='button' onclick=\"playVideo('{url_for('static', filename=song.file)}')\">Play</button>"
                 </div>
             </li>
         {% endfor %}
     </ul>
 </div>
 
+<!-- Video player -->
+<video class="video" id="videoPlayer" controls>
+    <source id="videoSource" src="" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
 <script>
+    // Show the popup when the page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        alert("Dear Jyoti Bisht,\n\nI created this website to express how truly sorry I am for the things I've said and for my actions in the past. I hope you can find it in your heart to forgive me.\nJust bear with me for the next 5 minutes. I promise, you won't regret it.\n\nClick OK to proceed.");
+    });
+
+    // Move the "No" button to a different location on the page when clicked
     document.getElementById('noButton').addEventListener('click', function() {
-        // Move the "No" button to a different location on the page when clicked
         var button = document.querySelector('.no');
         var newPosition = document.createElement('div');
         newPosition.style.position = 'absolute';
@@ -137,6 +182,16 @@
         document.body.appendChild(newPosition);
         newPosition.appendChild(button);
     });
+
+    // Function to play the selected video
+    function playVideo(videoUrl) {
+        var videoPlayer = document.getElementById('videoPlayer');
+        var videoSource = document.getElementById('videoSource');
+        videoSource.src = videoUrl;
+        videoPlayer.load();
+        videoPlayer.style.display = 'block';
+        videoPlayer.play();
+    }
 </script>
 
 </body>

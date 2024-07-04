@@ -9,18 +9,32 @@
         max-width: 800px; /* Set maximum width for the content */
         margin: 0 auto; /* Center the content horizontally */
         overflow: hidden; /* Clear floats */
+        text-align: left; /* Align text to the left */
     }
     .image {
         max-width: 50%; /* Set maximum width for the image */
         float: right; /* Float the image to the right */
         margin-left: 20px; /* Add margin for spacing */
     }
+    .video-button {
+        display: block; /* Make the button a block element */
+        width: 100%; /* Make the button take full width */
+        padding: 10px;
+        background-color: #4CAF50; /* Green background */
+        color: white; /* White text */
+        text-align: center; /* Center text */
+        text-decoration: none; /* Remove underline */
+        border-radius: 5px; /* Rounded corners */
+        margin-top: 20px; /* Space above the button */
+        font-size: 16px; /* Font size */
+        cursor: pointer; /* Pointer cursor on hover */
+    }
 </style>
 </head>
 <body>
 
 <audio autoplay loop>
-    <source src="{{ url_for('static', filename='wishes.mp3') }}" type="audio/mpeg">
+    <source src="{{ url_for('static', filename='kabhi.mp3') }}" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
 
@@ -31,12 +45,19 @@
         <br>
         Thank You for your advices, I must admit they have been really helpful to me everytime.
         <br>
-        I wish to remain in touch not just even our time in Axtria, also once we either or both leave this organisation
+        I know you don't trust me because I am very bad at keeping promises. But, I guess I am trying now.
         <br>
-        Yes you are super cute and becomes way cuter once you smile, so keep smiling.
-        
+        I still would love to be your go-to person, chuddy-buddy, don't know if still friendship is possible between us or not
+        <br>
+        But wants to keep in touch with you, after and beyond Axtria.
+        <br>
+        You are super cute and become way cuter once you smile, so keep smiling and keep growing.
     </p>
-
+    <br>
+    <p> Here's a special message for your from someone special</p>
+    <!-- Button to play video -->
+    <a href="{{ url_for('static', filename='kareena.mp4') }}" class="video-button">Play Video</a>
+    <br><br><br><br>
     <p>
         If you want to say something, please write it in the text box provided.
     </p>
@@ -52,18 +73,20 @@
     </form>
 
     <p>
-    I know it's a pretty bad website ,sorry for that, I am just learning this new skill and pretty pathetic at designing.
-    </br>
-    It's just a sincere attempt from my side for the Apology in this fashion (bas yehi thoda bahut aata hai yarr).
+        I know it's a pretty bad website, sorry for that.
+        <br>
+        But still, I hope you liked it.
     </p>
     <p>
-    A Noob Developer
-    </br>
-    Laksh
+        Laksh
     </p>
 
-    <!-- Image -->
-    <img class="image" src="{{ url_for('static', filename='happy.jpeg') }}" alt="Your Image Description">
+    <!-- First Image -->
+   
+    <img class="image" src="{{ url_for('static', filename='samosa.jpeg') }}" alt="">
+
+    
+   
 </div>
 
 </body>

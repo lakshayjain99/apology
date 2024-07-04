@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Context Page</title>
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+        padding: 20px;
+        text-align: center;
+    }
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        text-decoration: none;
+        background-color: #4CAF50;
+        color: white;
+        margin-top: 20px;
+    }
+    .play-button {
+        background-color: #2196F3;
+        margin-top: 20px;
+    }
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    .image-row {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .image-row img {
+        max-width: 150px;
+        height: auto;
+        margin-right: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Context</h1>
+    <p>
+        Hello Miss Bisht,<br>
+        You are one in a billion(quiet literally as well, just 2% population have B-)<br>
+        This is a heartfelt effort for an apology not some overthinking product. <br>
+        Also, this time I wanted to make sure that I convey the exact message which is there in my heart.(not the case in the past).<br>
+        Meet the two characters of this story.
+        
+    </p>
+    <div class="image-container">
+        <div class="image-row">
+            <img src="{{ url_for('static', filename='cool_chi.jpeg') }}" alt="Image 1 Description">
+            <p>Meet Chi. Smart but emotional fool. <br>Bhaut practical samajta hai apne aap ko but hai nahi. </p>
+        </div>
+        <div class="image-row">
+            <img src="{{ url_for('static', filename='cute_jo.jpeg') }}" alt="Image 2 Description">
+            <p>Meet Jo. Extremely cute, likes reading books. <br> but apne khayalon mein khoyi reheti hai hamesha.</p>
+        </div>
+    </div>
+    <p>
+        Here's an original composition expressing my feeling. Hope You like it.
+    </p>
+    
+    
+    
+    <a class="button play-button" id="playButton" href="/lyrics">Song Page</a>
+</div>
+
+</body>
+</html>
