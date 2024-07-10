@@ -15,7 +15,6 @@ app.config['MAIL_PASSWORD'] = 'mngstmufhpkowiqy'  # Change this to your email pa
 mail = Mail(app)
 
 # Initialize pygame mixer
-pygame.mixer.init()
 
 # Playlist of static
 playlist = [
