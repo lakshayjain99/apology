@@ -84,3 +84,7 @@ def yes():
         return render_template('yes.html')
 
 
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
