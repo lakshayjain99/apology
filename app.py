@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_mail import Mail, Message
 from datetime import datetime
-import pygame
+
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -39,7 +39,7 @@ def context():
 def lyrics():
     return render_template('lyrics.html')
 
-@app.route('/play/<song_name>', methods=['POST'])
+"""@app.route('/play/<song_name>', methods=['POST'])
 def play(song_name):
     global current_song
 
@@ -60,7 +60,7 @@ def play(song_name):
             current_song = None
         return '', 204
     else:
-        return 'Song not found', 404
+        return 'Song not found', 404"""
 
 @app.route('/yes', methods=['GET', 'POST'])
 def yes():
